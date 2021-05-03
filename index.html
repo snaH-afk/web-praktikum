@@ -1,45 +1,123 @@
 <!DOCTYPE html>
 <html lang="en" class="no-js">
-<head>
-  <meta charset="UTF-8">
-  <!-- required for bulma -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- required for bulma -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>Today</title>
+    <title>Today</title>
 
-  <script type="module">
-    document.documentElement.classList.remove('no-js');
-    document.documentElement.classList.add('js');
-  </script>
+    <script type="module">
+      document.documentElement.classList.remove("no-js");
+      document.documentElement.classList.add("js");
+    </script>
 
-  <link rel="stylesheet" href="/resources/css/index.css">
-  <link rel="stylesheet" href="/resources/css/print.css" media="print">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
+    <link rel="stylesheet" href="/resources/css/index.css" />
+    <link rel="stylesheet" href="/resources/css/print.css" media="print" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css"
+    />
 
-  <meta name="description" content="Page description">
-  <meta property="og:title" content="Unique page title - My Site">
-  <meta property="og:description" content="Page description">
-  <meta property="og:image" content="https://www.mywebsite.com/image.jpg">
-  <meta property="og:image:alt" conte   nt="Image description">
-  <meta property="og:locale" content="en_GB">
-  <meta property="og:type" content="website">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta property="og:url" content="https://www.mywebsite.com/page">
-  <link rel="canonical" href="https://www.mywebsite.com/page">
+    <meta name="description" content="Page description" />
+    <meta property="og:title" content="Unique page title - My Site" />
+    <meta property="og:description" content="Page description" />
+    <meta property="og:image" content="https://www.mywebsite.com/image.jpg" />
+    <meta property="og:image:alt" conte nt="Image description" />
+    <meta property="og:locale" content="en_GB" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="og:url" content="https://www.mywebsite.com/page" />
+    <link rel="canonical" href="https://www.mywebsite.com/page" />
 
-  <link rel="icon" href="/favicon.ico">
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="manifest" href="/my.webmanifest">
-  <meta name="theme-color" content="#FF00FF">
-</head>
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/my.webmanifest" />
+    <meta name="theme-color" content="#FF00FF" />
+  </head>
 
-<body>
-  <!-- Content -->
-  <script src="/assets/js/xy-polyfill.js" nomodule></script>
-  <script src="/assets/js/script.js" type="module"></script>
-  <img src="./resources/images/logo.svg" alt="logo" width="8%">
-  <h1>Today Project - Dino Lindlau - 11134650</h1>
-  <a class="button is-warning"> Click me </a>
-</body>
+  <body>
+    <!-- Content -->
+    <script src="/assets/js/xy-polyfill.js" nomodule></script>
+    <script src="/assets/js/script.js" type="module"></script>
+
+    <div>
+        <div class=" columns is-mobile is-flex mt-6 " >
+          <div class="column is-offset-1 is-half-mobile is-1-desktop is-one-fifth-tablet">
+            <img src="./resources/images/logo.svg" alt="logo" width="100%" />
+          </div>
+          <div class="column ">
+            <h1 class="title is-1">Today</h1>
+            <h4 class="subtitle is-4">Journal for daily data</h4>
+          </div>
+        </div>
+      </div>
+      <div
+        class="is-flex is-flex-direction-row is-justify-content-flex-end mr-6 mb-6"
+      >
+        <a class="button is-warning"> Add new post </a>
+      </div>
+
+      <div class="card mb-6">
+        <div class="card-content">
+          <div class="media">
+            <div class="media-left">
+              <figure class="image is-48x48">
+                <img
+                  src="https://bulma.io/images/placeholders/96x96.png"
+                  alt="Placeholder image"
+                />
+              </figure>
+            </div>
+            <div class="media-content">
+              <p class="title is-4">Tag 1 - Dienstag, 4. Mai 2021</p>
+              <p class="subtitle is-6">Lorem Ipsum</p>
+            </div>
+          </div>
+          <div class="content">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
+            nec iaculis mauris.
+            <br />
+            <time datetime="2016-1-1">00:38 - 4 Mai 2021</time>
+          </div>
+          <footer class="card-footer">
+            <a href="#" class="card-footer-item">Save</a>
+            <a href="#" class="card-footer-item">Edit</a>
+            <a href="#" class="card-footer-item">Delete</a>
+          </footer>
+        </div>
+      </div>
+
+      <div class="card mb-6">
+        <div class="card-content">
+          <div class="media">
+            <div class="media-left">
+              <figure class="image is-48x48">
+                <img
+                  src="https://bulma.io/images/placeholders/96x96.png"
+                  alt="Placeholder image"
+                />
+              </figure>
+            </div>
+            <div class="media-content">
+              <p class="title is-4">Tag 1 - Dienstag, 4. Mai 2021</p>
+              <p class="subtitle is-6">Lorem Ipsum</p>
+            </div>
+          </div>
+          <div class="content">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
+            nec iaculis mauris.
+            <br />
+            <time datetime="2016-1-1">00:38 - 4 Mai 2021</time>
+          </div>
+          <footer class="card-footer">
+            <a href="#" class="card-footer-item">Save</a>
+            <a href="#" class="card-footer-item">Edit</a>
+            <a href="#" class="card-footer-item">Delete</a>
+          </footer>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
