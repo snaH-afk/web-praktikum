@@ -50,32 +50,33 @@
     </div>
 
     <h1 class="title is-2"> Neuer Post </h1>
-    <h1 class="title is-4">Datum</h1>
-    <h1 id="datum" class="title is-4">Datum</h1>
+    <div class="columns is-mobile">
+        <h1 class="column title is-4">Datum</h1>
+        <h1 id="datum" class="column title is-4">Datum</h1>
+    </div>
     <script>
         var myDate = new Date();
         var myEuroDate = myDate.getDate() + '/' + myDate.getMonth() + '/' + myDate.getFullYear();
         document.getElementById("datum").innerHTML = myEuroDate;
     </script>
-    <h1 class="title is-4">Titel</h1>
-    <input class="input" type="text" placeholder="Text input">
+    <div class="columns">
+        <h1 class="column title is-4">Titel</h1>
+        <input class=" column input" type="text" placeholder="Text eingeben">
+    </div>
     <h1 class="title is-4">Beschreibung</h1>
-    <textarea class="textarea" placeholder="e.g. Hello world"></textarea>
+    <textarea class="textarea" placeholder="Beschreibung eingeben"></textarea>
     <h1 class="title is-4">Bild</h1>
-    <div class="file is-info has-name">
+    <div class="file is-info ml-2 mb-4">
         <label class="file-label">
           <input class="file-input" type="file" name="resume">
           <span class="file-cta">
-            <span class="file-icon">
-              <i class="fas fa-upload"></i>
-            </span>
             <span class="file-label">
               Bild hochladen
             </span>
           </span>
         </label>
     </div>
-    <button class="button is is-success"> Eintrag speichern </button>
+    <button class="button is is-success ml-2 mr-4"> Eintrag speichern </button>
     <button class="button is-warning"> Zurück zur Übersicht </button>
 
 
