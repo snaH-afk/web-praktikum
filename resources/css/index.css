@@ -82,6 +82,7 @@
 
 body {
     background-color: #f2f3f4;
+    min-height: 102vh;
     margin: 0;
     padding: 0;
 }
