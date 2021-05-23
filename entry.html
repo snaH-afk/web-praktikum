@@ -40,50 +40,36 @@
     <script src="/assets/js/xy-polyfill.js" nomodule></script>
     <script src="/assets/js/script.js" type="module"></script>
 
-    <div class=" columns is-mobile is-flex">
-        <div class="column is-offset-2 is-3-mobile is-1-desktop is-2-tablet">
-            <img src="./resources/images/logo.svg" alt="logo" width="100%" />
-        </div>
-        <div class="column ">
-            <h1 class="title is-1">Today</h1>
-            <h4 class="subtitle is-4">Tag 1 - Dienstag 04. Mai 2021 </h4>
-        </div>
-    </div>
-    </div>
+    <div id="appwidth">
 
-    <h1 class="title is-2"> Neuer Post </h1>
-    <div class="columns is-mobile">
-        <h1 class="column title is-4">Datum</h1>
-        <h1 id="datum" class="column title is-4">Datum</h1>
+        <div class=" columns is-mobile is-flex pt-6 mb-6">
+            <div class="column is-offset-2 is-3-mobile is-1-desktop is-2-tablet">
+                <img src="./resources/images/logo.svg" alt="logo" width="100%" />
+            </div>
+            <div class="column ">
+                <h1 class="title is-1">Today</h1>
+                <h4 class="subtitle is-4">Tagesübersicht </h4>
+            </div>
+        </div>
+
+        <img src="https://source.unsplash.com/random/500×100/?city" style="width: auto; height:200px"></img>
+
+        <div class=" title is-4 "> Tag 1 - Dienstag 04. Mai 2021 </div>
+        <div class="title is-4 "> Schlafdauer: 8h </div>
+        <div class="title is-4 "> Schlafqualität: 8/10 </div>
+        <div class="title is-4 "> Sportdauer: 3h 15m </div>
+        <div class="title is-4 "> Sportintensität: 3 </div>
+        <div class="title is-4 "> Wohlbefinden: 8 </div>
+        <div class="title is-4 "> Migräne: keine </div>
+        <div class="title is-2 "> Fazit: 9/10 </div>
+        <div class="title is-3 ">Sie hatten einen sehr guten Tag, weiter so!</div>
+        <br/>
+
+        <button class="button is-warning "> 
+        <a href="./index.html "> Zurück zur Übersicht </a> 
+        </button>
+
     </div>
-    <script>
-        var myDate = new Date();
-        var myEuroDate = myDate.getDate() + '/' + myDate.getMonth() + '/' + myDate.getFullYear();
-        document.getElementById("datum").innerHTML = myEuroDate;
-    </script>
-    <div class="columns">
-        <h1 class="column title is-4">Titel</h1>
-        <input class=" column input" type="text" placeholder="Text eingeben">
-    </div>
-    <h1 class="title is-4">Beschreibung</h1>
-    <textarea class="textarea" placeholder="Beschreibung eingeben"></textarea>
-    <h1 class="title is-4">Bild</h1>
-    <div class="file is-info ml-2 mb-4">
-        <label class="file-label">
-          <input class="file-input" type="file" name="resume">
-          <span class="file-cta">
-            <span class="file-label">
-              Bild hochladen
-            </span>
-          </span>
-        </label>
-    </div>
-    <button class="button is is-success ml-2 mr-4"> Eintrag speichern </button>
-    <button class="button is-warning"> 
-        <a href="./index.html">
-            Zurück zur Übersicht 
-        </a>
-    </button>
 
 
 
