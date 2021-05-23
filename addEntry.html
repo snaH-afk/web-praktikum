@@ -47,159 +47,172 @@
     <script src="/assets/js/xy-polyfill.js" nomodule></script>
     <script src="/assets/js/script.js" type="module"></script>
 
-    <div class=" columns is-mobile is-flex mt-6 ">
-        <div class="column is-offset-2 is-3-mobile is-1-desktop is-2-tablet">
-            <img src="./resources/images/logo.svg" alt="logo" width="100%" />
-        </div>
-        <div class="column ">
-            <h1 class="title is-1">Today</h1>
-            <h4 class="subtitle is-4">Hinzufügen eines neuen Eintrags</h4>
-        </div>
-    </div>
-    </div>
+    <div id="appwidth">
 
-    <h1 class="title is-2"> Tag 1 - 04. Mai 2021 </h1>
-    <div class="columns is-mobile">
-        <h1 class="column title is-4">Datum</h1>
-        <h1 id="datum" class="column title is-4">Datum</h1>
-    </div>
-    <script>
-        var myDate = new Date();
-        var myEuroDate = myDate.getDate() + '/' + myDate.getMonth() + '/' + myDate.getFullYear();
-        document.getElementById("datum").innerHTML = myEuroDate;
-    </script>
-    <div class="columns">
-        <h1 class="column title is-4">Titel</h1>
-        <input class=" column input" type="text" placeholder="Text eingeben">
-    </div>
+        <div class=" columns is-mobile is-flex">
+            <div class="column is-offset-2 is-3-mobile is-1-desktop is-2-tablet">
+                <img src="./resources/images/logo.svg" alt="logo" width="100%" />
+            </div>
+            <div class="column ">
+                <h1 class="title is-1">Today</h1>
+                <h4 class="subtitle is-4">Hinzufügen eines neuen Eintrags</h4>
+            </div>
+        </div>
 
-    <h1 class="title is-2"> Schlafdauer </h1>
-    <div class="slidecontainer">
-        <input type="range" min="4" max="12" value="8" step="0.5" class="slider" id="schlafrange">
-    </div>
-    <output id="demo">
+        <h1 class="title is-2"> Tag 1 - 04. Mai 2021 </h1>
+        <div class="columns is-mobile">
+            <h1 class="column title is-4">Datum</h1>
+            <h1 id="datum" class="column title is-4">Datum</h1>
+        </div>
+        <script>
+            var myDate = new Date();
+            var myEuroDate = myDate.getDate() + '/' + myDate.getMonth() + '/' + myDate.getFullYear();
+            document.getElementById("datum").innerHTML = myEuroDate;
+        </script>
+        <div class="columns">
+            <h1 class="column title is-4">Titel</h1>
+            <input class=" column input" type="text" placeholder="Text eingeben">
+        </div>
+
+        <h1 class="title is-2"> Schlafdauer </h1>
+        <div class="slidecontainer">
+            <input type="range" min="4" max="12" value="8" step="0.5" class="slider" id="schlafrange">
+        </div>
+        <output id="demo">
         <h1 class="title is-2" id="schlafdauer"> </h1>
     </output>
-    <script>
-        var slider = document.getElementById("schlafrange");
-        var output = document.getElementById("schlafdauer");
-        output.innerHTML = slider.value; // Display the default slider value
+        <script>
+            var slider = document.getElementById("schlafrange");
+            var output = document.getElementById("schlafdauer");
+            output.innerHTML = slider.value; // Display the default slider value
 
-        // Update the current slider value (each time you drag the slider handle)
-        slider.oninput = function() {
-            output.innerHTML = this.value;
-        }
-    </script>
+            // Update the current slider value (each time you drag the slider handle)
+            slider.oninput = function() {
+                output.innerHTML = this.value;
+            }
+        </script>
 
-    <h1 class="title is-2"> Schlafqualität </h1>
-    <div class="slidecontainer">
-        <input type="range" min="0" max="10" value="0" step="1" class="slider" id="schlafqualitaetrange">
-    </div>
-    <output id="demo">
+        <h1 class="title is-2"> Schlafqualität </h1>
+        <div class="slidecontainer">
+            <input type="range" min="0" max="10" value="0" step="1" class="slider" id="schlafqualitaetrange">
+        </div>
+        <output id="demo">
     <h1 class="title is-2" id="schlafqualitaet">  </h1>
 </output>
-    <script>
-        var slider = document.getElementById("schlafqualitaetrange");
-        var output = document.getElementById("schlafqualitaet");
-        output.innerHTML = slider.value; // Display the default slider value
+        <script>
+            var slider = document.getElementById("schlafqualitaetrange");
+            var output = document.getElementById("schlafqualitaet");
+            output.innerHTML = slider.value; // Display the default slider value
 
-        // Update the current slider value (each time you drag the slider handle)
-        slider.oninput = function() {
-            output.innerHTML = this.value;
-        }
-    </script>
+            // Update the current slider value (each time you drag the slider handle)
+            slider.oninput = function() {
+                output.innerHTML = this.value;
+            }
+        </script>
 
-    <h1 class="title is-2"> Sportdauer </h1>
-    <div class="slidecontainer">
-        <input type="range" min="0" max="3" value="1" step="0.5" class="slider" id="sportrange">
-    </div>
-    <output id="demo">
+        <h1 class="title is-2"> Sportdauer </h1>
+        <div class="slidecontainer">
+            <input type="range" min="0" max="3" value="1" step="0.5" class="slider" id="sportrange">
+        </div>
+        <output id="demo">
     <h1 class="title is-2" id="sportdauer">  </h1>
 </output>
-    <script>
-        var slider = document.getElementById("sportrange");
-        var output = document.getElementById("sportdauer");
-        output.innerHTML = slider.value; // Display the default slider value
+        <script>
+            var slider = document.getElementById("sportrange");
+            var output = document.getElementById("sportdauer");
+            output.innerHTML = slider.value; // Display the default slider value
 
-        // Update the current slider value (each time you drag the slider handle)
-        slider.oninput = function() {
-            output.innerHTML = this.value;
-        }
-    </script>
-    <h1 class="title is-2"> Sportintensität </h1>
-    <div class="slidecontainer">
-        <input type="range" min="0" max="3" value="1" step="1" class="slider" id="sportintensitaetrange">
-    </div>
-    <output id="demo">
+            // Update the current slider value (each time you drag the slider handle)
+            slider.oninput = function() {
+                output.innerHTML = this.value;
+            }
+        </script>
+        <h1 class="title is-2"> Sportintensität </h1>
+        <div class="slidecontainer">
+            <input type="range" min="0" max="3" value="1" step="1" class="slider" id="sportintensitaetrange">
+        </div>
+        <output id="demo">
        <h1 class="title is-2" id="sportintensitaet">  </h1>
    </output>
-    <script>
-        var slider = document.getElementById("sportintensitaetrange");
-        var output = document.getElementById("sportintensitaet");
-        output.innerHTML = slider.value; // Display the default slider value
+        <script>
+            var slider = document.getElementById("sportintensitaetrange");
+            var output = document.getElementById("sportintensitaet");
+            output.innerHTML = slider.value; // Display the default slider value
 
-        // Update the current slider value (each time you drag the slider handle)
-        slider.oninput = function() {
-            output.innerHTML = this.value;
-        }
-    </script>
+            // Update the current slider value (each time you drag the slider handle)
+            slider.oninput = function() {
+                output.innerHTML = this.value;
+            }
+        </script>
 
-    <h1 class="title is-2"> Wohlbefinden </h1>
-    <div class="slidecontainer">
-        <input type="range" min="0" max="10" value="1" step="1" class="slider" id="wohlbefindenrange">
-    </div>
-    <output id="demo">
+        <h1 class="title is-2"> Wohlbefinden </h1>
+        <div class="slidecontainer">
+            <input type="range" min="0" max="10" value="1" step="1" class="slider" id="wohlbefindenrange">
+        </div>
+        <output id="demo">
 <h1 class="title is-2" id="wohlbefinden">  </h1>
 </output>
-    <script>
-        var slider = document.getElementById("wohlbefindenrange");
-        var output = document.getElementById("wohlbefinden");
-        output.innerHTML = slider.value; // Display the default slider value
+        <script>
+            var slider = document.getElementById("wohlbefindenrange");
+            var output = document.getElementById("wohlbefinden");
+            output.innerHTML = slider.value; // Display the default slider value
 
-        // Update the current slider value (each time you drag the slider handle)
-        slider.oninput = function() {
-            output.innerHTML = this.value;
-        }
-    </script>
+            // Update the current slider value (each time you drag the slider handle)
+            slider.oninput = function() {
+                output.innerHTML = this.value;
+            }
+        </script>
 
 
-    <label class="checkbox" onclick="showOrHideDiv()">
+        <label class="checkbox" onclick="showOrHideDiv()">
     <input type="checkbox" id="migraenecheckbox">
     Migräne
     </label>
-    <div id="migraenediv">
-        <div class="slidecontainer" id="migraenecontainer">
-            <input type="range" min="0" max="10" value="1" step="1" class="slider" id="migraenerange">
-        </div>
-        <output id="demo">
+        <div id="migraenediv">
+            <div class="slidecontainer" id="migraenecontainer">
+                <input type="range" min="0" max="10" value="1" step="1" class="slider" id="migraenerange">
+            </div>
+            <output id="demo">
     <h1 class="title is-2" id="migraene">  </h1>
     </output>
-    </div>
-    <script>
-        function showOrHideDiv() {
-            if (document.getElementById("migraenediv").style.display == 'none') {
-                document.getElementById("migraenediv").style.display = '';
-            } else {
-                document.getElementById("migraenediv").style.display = 'none';
+        </div>
+        <script>
+            function showOrHideDiv() {
+                if (document.getElementById("migraenediv").style.display == 'none') {
+                    document.getElementById("migraenediv").style.display = '';
+                } else {
+                    document.getElementById("migraenediv").style.display = 'none';
+                }
             }
-        }
-        var slider = document.getElementById("migraenerange");
-        var output = document.getElementById("migraene");
-        output.innerHTML = slider.value; // Display the default slider value
+            var slider = document.getElementById("migraenerange");
+            var output = document.getElementById("migraene");
+            output.innerHTML = slider.value; // Display the default slider value
 
-        // Update the current slider value (each time you drag the slider handle)
-        slider.oninput = function() {
-            output.innerHTML = this.value;
-        }
-    </script>
+            // Update the current slider value (each time you drag the slider handle)
+            slider.oninput = function() {
+                output.innerHTML = this.value;
+            }
+        </script>
+        <button class="button" onclick="getIPFromAmazon()">console.log ip</button>
+        <script>
+            function getIPFromAmazon() {
+                fetch("https://checkip.amazonaws.com/", {
+                    mode: 'cors',
+                    headers: {
+                        'Access-Control-Allow-Origin': '*'
+                    }
+                }).then(res => res.text()).then(data => console.log(data))
+            }
+        </script>
 
 
 
-    <h1 class="title is-4">Beschreibung</h1>
-    <textarea class="textarea" placeholder="Beschreibung eingeben"></textarea>
-    <h1 class="title is-4">Bild</h1>
-    <div class="file is-info ml-2 mb-4">
-        <label class="file-label">
+        <h1 class="title is-4">Beschreibung</h1>
+        <textarea class="textarea" placeholder="Beschreibung eingeben">
+    </textarea>
+        <h1 class="title is-4">Bild</h1>
+        <div class="file is-info ml-2 mb-4">
+            <label class="file-label">
           <input class="file-input" type="file" name="resume">
           <span class="file-cta">
             <span class="file-label">
@@ -207,14 +220,15 @@
             </span>
           </span>
         </label>
-    </div>
-    <button class="button is is-success ml-2 mr-4"> Eintrag speichern </button>
-    <button class="button is-warning"> 
+        </div>
+        <button class="button is is-success ml-2 mr-4"> Eintrag speichern </button>
+        <button class="button is-warning"> 
         <a href="./index.html">
             Zurück zur Übersicht 
         </a>
     </button>
 
+    </div>
 
 
 </body>
