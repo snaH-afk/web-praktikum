@@ -3,21 +3,7 @@
 
 <head>
     <meta charset="UTF-8" />
-    <!-- required for bulma -->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <title>Today</title>
-
-    <script type="module">
-        document.documentElement.classList.remove("no-js"); document.documentElement.classList.add("js");
-    </script>
-
-
-
-    <link rel="stylesheet" href="/resources/css/index.css" />
-    <link rel="stylesheet" href="/resources/css/print.css" media="print" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css" />
-
     <meta name="description" content="Page description" />
     <meta property="og:title" content="Unique page title - My Site" />
     <meta property="og:description" content="Page description" />
@@ -27,21 +13,28 @@
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta property="og:url" content="https://www.mywebsite.com/page" />
-    <link rel="canonical" href="https://www.mywebsite.com/page" />
+    <meta name="theme-color" content="#FF00FF" />
 
+    <title>Today</title>
+
+    <link rel="stylesheet" href="/resources/css/index.css" />
+    <link rel="stylesheet" href="/resources/css/print.css" media="print" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css" />
+    <link rel="canonical" href="https://www.mywebsite.com/page" />
     <link rel="icon" href="favicon.ico" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/my.webmanifest" />
-    <meta name="theme-color" content="#FF00FF" />
+
+    <script type="module">
+        document.documentElement.classList.remove("no-js"); document.documentElement.classList.add("js");
+    </script>
 </head>
 
 <body>
-    <!-- Content -->
     <script src="/assets/js/xy-polyfill.js" nomodule></script>
     <script src="/assets/js/script.js" type="module"></script>
 
     <div id="appwidth">
-
         <div class=" columns is-mobile is-flex pt-6 mb-6">
             <div class="column is-offset-2 is-3-mobile is-1-desktop is-2-tablet">
                 <img src="./resources/images/logo.svg" alt="logo" width="100%" />
@@ -54,7 +47,7 @@
 
         <img src="https://source.unsplash.com/random/500×100/?city" style="width: auto; height:200px"></img>
 
-        <div class=" title is-4 "> Tag 1 - Dienstag 04. Mai 2021 </div>
+        <div class="title is-1"> Tag 1 - Dienstag 04. Mai 2021 </div>
         <div class="title is-4 "> Schlafdauer: 8h </div>
         <div class="title is-4 "> Schlafqualität: 8/10 </div>
         <div class="title is-4 "> Sportdauer: 3h 15m </div>
@@ -62,17 +55,15 @@
         <div class="title is-4 "> Wohlbefinden: 8 </div>
         <div class="title is-4 "> Migräne: keine </div>
         <div class="title is-2 "> Fazit: 9/10 </div>
+        <div class="title is-2"> Persönlicher Kommentar:</div>
+        <p>Heute ist der 04. Mai 2021. Ich bin gut in den Tag gestartet und freute mich auf die Web-Vorlesung. Es geht nun endlich ans eingemachte und ich schreibe meine erste Website! </p>
         <div class="title is-3 ">Sie hatten einen sehr guten Tag, weiter so!</div>
         <br/>
 
         <button class="button is-warning "> 
         <a href="./index.html "> Zurück zur Übersicht </a> 
         </button>
-
     </div>
-
-
-
 </body>
 
 </html>
