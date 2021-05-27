@@ -45,7 +45,6 @@
             </div>
         </div>
 
-        <h1 class="title is-2"> Tag 1 - 04. Mai 2021 </h1>
         <div class="columns is-mobile">
             <h1 class="column title is-4">Datum</h1>
             <h1 id="datum" class="column title is-4">Datum</h1>
@@ -68,88 +67,37 @@
         <h1 class="title is-2" id="schlafdauer"> </h1>
         </output>
 
-        <script>
-            var schlafRangeSlider = document.getElementById("schlafrange");
-            var schlafRangeOutput = document.getElementById("schlafdauer");
-            schlafRangeOutput.innerHTML = schlafRangeSlider.value; // Display the default slider value
-
-            // Update the current slider value (each time you drag the slider handle)
-            schlafRangeSlider.oninput = function() {
-                schlafRangeOutput.innerHTML = this.value;
-            }
-        </script>
-
         <h1 class="title is-2"> Schlafqualität </h1>
         <div class="slidecontainer">
             <input type="range" min="0" max="10" value="0" step="1" class="slider" id="schlafqualitaetrange">
         </div>
         <output id="demo">
-    <h1 class="title is-2" id="schlafqualitaet">  </h1>
-</output>
-        <script>
-            var sleepQualitySlider = document.getElementById("schlafqualitaetrange");
-            var sleepQualityOutput = document.getElementById("schlafqualitaet");
-            sleepQualityOutput.innerHTML = sleepQualitySlider.value; // Display the default slider value
-
-            // Update the current slider value (each time you drag the slider handle)
-            sleepQualitySlider.oninput = function() {
-                sleepQualityOutput.innerHTML = this.value;
-            }
-        </script>
+            <h1 class="title is-2" id="schlafqualitaet"></h1>
+        </output>
 
         <h1 class="title is-2"> Sportdauer </h1>
         <div class="slidecontainer">
             <input type="range" min="0" max="3" value="1" step="0.5" class="slider" id="sportrange">
         </div>
         <output id="demo">
-        <h1 class="title is-2" id="sportdauer">  </h1>
+            <h1 class="title is-2" id="sportdauer">  </h1>
         </output>
-        <script>
-            var sportRangeSlider = document.getElementById("sportrange");
-            var sportRangeOutput = document.getElementById("sportdauer");
-            sportRangeOutput.innerHTML = sportRangeSlider.value; // Display the default slider value
 
-            // Update the current slider value (each time you drag the slider handle)
-            sportRangeSlider.oninput = function() {
-                sportRangeOutput.innerHTML = this.value;
-            }
-        </script>
         <h1 class="title is-2"> Sportintensität </h1>
         <div class="slidecontainer">
             <input type="range" min="0" max="3" value="1" step="1" class="slider" id="sportintensitaetrange">
         </div>
         <output id="demo">
-       <h1 class="title is-2" id="sportintensitaet">  </h1>
-      </output>
-        <script>
-            var sportIntensitySlider = document.getElementById("sportintensitaetrange");
-            var sportIntensityOutput = document.getElementById("sportintensitaet");
-            sportIntensityOutput.innerHTML = sportIntensitySlider.value; // Display the default slider value
-
-            // Update the current slider value (each time you drag the slider handle)
-            sportIntensitySlider.oninput = function() {
-                sportIntensityOutput.innerHTML = this.value;
-            }
-        </script>
+            <h1 class="title is-2" id="sportintensitaet">  </h1>
+        </output>
 
         <h1 class="title is-2"> Wohlbefinden </h1>
         <div class="slidecontainer">
             <input type="range" min="1" max="10" value="1" step="1" class="slider" id="wohlbefindenrange">
         </div>
         <output id="demo">
-        <h1 class="title is-2" id="wohlbefinden">  </h1>
+            <h1 class="title is-2" id="wohlbefinden">  </h1>
         </output>
-        <script>
-            var wellbeingSlider = document.getElementById("wohlbefindenrange");
-            var wellbeingOutput = document.getElementById("wohlbefinden");
-            wellbeingOutput.innerHTML = wellbeingSlider.value; // Display the default slider value
-
-            // Update the current slider value (each time you drag the slider handle)
-            wellbeingSlider.oninput = function() {
-                wellbeingOutput.innerHTML = this.value;
-            }
-        </script>
-
 
         <label class="checkbox" onclick="showOrHideDiv()">
         <input type="checkbox" id="migraenecheckbox"> Migräne </label>
@@ -169,35 +117,69 @@
                     document.getElementById("migraenediv").style.display = 'none';
                 }
             }
-            var slider = document.getElementById("migraenerange");
-            var output = document.getElementById("migraene");
-            output.innerHTML = slider.value; // Display the default slider value
+        </script>
 
-            // Update the current slider value (each time you drag the slider handle)
+        <h1 class="title is-4">Beschreibung</h1>
+        <textarea class="textarea" placeholder="Beschreibung eingeben">  </textarea>
+        <h1 class="title is-4">Bild</h1>
+        <div class="file is-info ml-2 mb-4">
+            <label class="file-label">
+                <input class="file-input" type="file" name="resume">
+                <span class="file-cta">
+                    <span class="file-label"> Bild hochladen  </span>
+                </span>
+            </label>
+        </div>
+        <button class="button is is-success ml-2 mr-4"> Eintrag speichern </button>
+        <button class="button is-warning"> 
+            <a href="./index.html"> Zurück zur Übersicht </a>
+        </button>
+
+        <script>
+            var schlafRangeSlider = document.getElementById("schlafrange");
+            var sleepQualitySlider = document.getElementById("schlafqualitaetrange");
+            var sportRangeSlider = document.getElementById("sportrange");
+            var sportIntensitySlider = document.getElementById("sportintensitaetrange");
+            var wellbeingSlider = document.getElementById("wohlbefindenrange");
+            var slider = document.getElementById("migraenerange");
+
+            var schlafRangeOutput = document.getElementById("schlafdauer");
+            var sleepQualityOutput = document.getElementById("schlafqualitaet");
+            var sportRangeOutput = document.getElementById("sportdauer");
+            var sportIntensityOutput = document.getElementById("sportintensitaet");
+            var wellbeingOutput = document.getElementById("wohlbefinden");
+            var output = document.getElementById("migraene");
+
+            schlafRangeOutput.innerHTML = schlafRangeSlider.value;
+            schlafRangeSlider.oninput = function() {
+                schlafRangeOutput.innerHTML = this.value;
+            }
+
+            sleepQualityOutput.innerHTML = sleepQualitySlider.value;
+            sleepQualitySlider.oninput = function() {
+                sleepQualityOutput.innerHTML = this.value;
+            }
+
+            sportRangeOutput.innerHTML = sportRangeSlider.value;
+            sportRangeSlider.oninput = function() {
+                sportRangeOutput.innerHTML = this.value;
+            }
+
+            sportIntensityOutput.innerHTML = sportIntensitySlider.value;
+            sportIntensitySlider.oninput = function() {
+                sportIntensityOutput.innerHTML = this.value;
+            }
+
+            wellbeingOutput.innerHTML = wellbeingSlider.value;
+            wellbeingSlider.oninput = function() {
+                wellbeingOutput.innerHTML = this.value;
+            }
+
+            output.innerHTML = slider.value;
             slider.oninput = function() {
                 output.innerHTML = this.value;
             }
         </script>
-        <h1 class="title is-4">Beschreibung</h1>
-        <textarea class="textarea" placeholder="Beschreibung eingeben">
-         </textarea>
-        <h1 class="title is-4">Bild</h1>
-        <div class="file is-info ml-2 mb-4">
-            <label class="file-label">
-          <input class="file-input" type="file" name="resume">
-          <span class="file-cta">
-            <span class="file-label">
-              Bild hochladen
-            </span>
-          </span>
-        </label>
-        </div>
-        <button class="button is is-success ml-2 mr-4"> Eintrag speichern </button>
-        <button class="button is-warning"> 
-        <a href="./index.html">
-            Zurück zur Übersicht 
-        </a>
-    </button>
 
     </div>
 
