@@ -9,7 +9,7 @@
     <meta property="og:title" content="Unique page title - My Site" />
     <meta property="og:description" content="Page description" />
     <meta property="og:image" content="https://www.mywebsite.com/image.jpg" />
-    <meta property="og:image:alt" conte nt="Image description" />
+    <meta property="og:image:alt" content="Image description" />
     <meta property="og:locale" content="en_GB" />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
@@ -45,7 +45,7 @@
             </div>
         </div>
 
-        <form action="/addEntry" method="post">
+        <form action="/addEntry" method="post" enctype="multipart/form-data">
 
             <div class="columns is-mobile">
                 <h1 class="column title is-4">Datum</h1>
@@ -57,65 +57,65 @@
                 document.getElementById("datum").innerHTML = myEuroDate;
             </script>
             <div class="columns">
-                <h1 class="column title is-4">Titel</h1>
-                <input class=" column input" type="text" placeholder="Text eingeben">
+                <label for="date" class="column title is-4">Titel</label>
+                <input class=" column input" type="text" id="date" placeholder="Text eingeben">
             </div>
 
-            <h1 class="title is-2"> Schlafdauer </h1>
+            <label for="schlafrange" class="title is-2"> Schlafdauer </label>
             <div class="slidecontainer">
-                <input type="range" min="4" max="12" value="8" step="0.5" class="slider" id="schlafrange">
+                <input type="range" min="4" max="12" value="8" step="0.5" class="slider" id="schlafrange" name="schlafrange">
             </div>
-            <output id="demo">
-        <h1 class="title is-2" id="schlafdauer"> </h1>
-        </output>
+            <output id="schlafdauerOutput">
+      <h1 class="title is-2" id="schlafdauer"> </h1>
+    </output>
 
-            <h1 class="title is-2"> Schlafqualität </h1>
+            <label for="schlafqualitaetrange" class="title is-2"> Schlafqualität </label>
             <div class="slidecontainer">
                 <input type="range" min="0" max="10" value="0" step="1" class="slider" id="schlafqualitaetrange">
             </div>
-            <output id="demo">
-            <h1 class="title is-2" id="schlafqualitaet"></h1>
-        </output>
+            <output id="schlafqualitaetOutput">
+      <h1 class="title is-2" id="schlafqualitaet"></h1>
+    </output>
 
-            <h1 class="title is-2"> Sportdauer </h1>
+            <label for="sportrange" class="title is-2"> Sportdauer </label>
             <div class="slidecontainer">
                 <input type="range" min="0" max="3" value="1" step="0.5" class="slider" id="sportrange">
             </div>
-            <output id="demo">
-            <h1 class="title is-2" id="sportdauer">  </h1>
-        </output>
+            <output id="sportdauerOutput">
+      <h1 class="title is-2" id="sportdauer">  </h1>
+    </output>
 
-            <h1 class="title is-2"> Sportintensität </h1>
+            <label for="sportintensitaetrange" class="title is-2"> Sportintensität </label>
             <div class="slidecontainer">
                 <input type="range" min="0" max="3" value="1" step="1" class="slider" id="sportintensitaetrange">
             </div>
-            <output id="demo">
-            <h1 class="title is-2" id="sportintensitaet">  </h1>
-        </output>
+            <output id="sportintensitaetOutput">
+      <h1 class="title is-2" id="sportintensitaet">  </h1>
+    </output>
 
-            <h1 class="title is-2"> Wohlbefinden </h1>
+            <label for="wohlbefindenrange" class="title is-2"> Wohlbefinden </label>
             <div class="slidecontainer">
                 <input type="range" min="1" max="10" value="1" step="1" class="slider" id="wohlbefindenrange">
             </div>
-            <output id="demo">
-            <h1 class="title is-2" id="wohlbefinden">  </h1>
-        </output>
+            <output id="wohlbefindenOutput">
+      <h1 class="title is-2" id="wohlbefinden">  </h1>
+    </output>
 
             <label class="checkbox" onclick="showOrHideDiv()">
-        <input type="checkbox" id="migraenecheckbox"> Migräne </label>
+      <input type="checkbox" id="migraenecheckbox"> Migräne </label>
             <div id="migraenediv">
-                <div class="slidecontainer" id="migraenecontainer">
-                    <input type="range" min="0" max="10" value="1" step="1" class="slider" id="migraenerange">
-                </div>
-                <output id="demo">
-             <h1 class="title is-2" id="migraene">  </h1>
-             </output>
+                <label for="migraenerange" class="slidecontainer" id="migraenecontainer">
+        <input type="range" min="0" max="10" value="1" step="1" class="slider" id="migraenerange">
+      </label>
+                <output id="migraeneOutput">
+        <h1 class="title is-2" id="migraene">  </h1>
+      </output>
             </div>
-
+            <button class="button is is-success ml-2 mr-4" type="submit"> Eintrag speichern </button>
         </form>
         <script>
             function showOrHideDiv() {
-                if (document.getElementById("migraenediv").style.display == 'none') {
+                if (document.getElementById("migraenediv").style.display === 'none') {
                     document.getElementById("migraenediv").style.display = '';
                 } else {
                     document.getElementById("migraenediv").style.display = 'none';
@@ -128,16 +128,15 @@
         <h1 class="title is-4">Bild</h1>
         <div class="file is-info ml-2 mb-4">
             <label class="file-label">
-                <input class="file-input" type="file" name="resume">
-                <span class="file-cta">
+      <input class="file-input" type="file" name="resume">
+      <span class="file-cta">
                     <span class="file-label"> Bild hochladen  </span>
                 </span>
-            </label>
+    </label>
         </div>
-        <button class="button is is-success ml-2 mr-4"> Eintrag speichern </button>
-        <button class="button is-warning"> 
-            <a href="./index.html"> Zurück zur Übersicht </a>
-        </button>
+        <button class="button is-warning">
+    <a href="./index.html"> Zurück zur Übersicht </a>
+  </button>
 
         <script>
             var schlafRangeSlider = document.getElementById("schlafrange");
