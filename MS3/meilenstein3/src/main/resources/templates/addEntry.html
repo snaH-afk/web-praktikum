@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="dewe" class="no-js">
+<html lang="dewe" class="no-js" xmlns="http://www.w3.org/1999/html">
 
 <head>
   <meta charset="UTF-8" />
@@ -31,40 +31,58 @@
 </head>
 
 <body>
-<script src="/assets/js/xy-polyfill.js" nomodule></script>
-<script src="/assets/js/script.js" type="module"></script>
+  <script src="/assets/js/xy-polyfill.js" nomodule></script>
+  <script src="/assets/js/script.js" type="module"></script>
 
-<div id="appwidth">
-  <div class=" columns is-mobile is-flex">
-    <div class="column is-offset-2 is-3-mobile is-1-desktop is-2-tablet">
-      <img src="./resources/images/logo.svg" alt="logo" width="100%" />
+  <div id="appwidth">
+   <div class=" columns is-mobile is-flex">
+     <div class="column is-offset-2 is-3-mobile is-1-desktop is-2-tablet">
+       <img src="./resources/images/logo.svg" alt="logo" width="100%" />
+     </div>
+     <div class="column ">
+       <h1 class="title is-1">Today</h1>
+       <h4 class="subtitle is-4">Hinzufügen eines neuen Eintrags</h4>
+     </div>
     </div>
-    <div class="column ">
-      <h1 class="title is-1">Today</h1>
-      <h4 class="subtitle is-4">Hinzufügen eines neuen Eintrags</h4>
-    </div>
-  </div>
 
-  <form action="/addEntry" method="post" enctype="multipart/form-data">
+    <form action="/addEntry" method="post" enctype="multipart/form-data">
 
-    <label for="schlafrange" class="title is-2"> Schlafdauer </label>
-      <input type="range" min="4" max="12" value="8" step="0.5" class="slider" id="schlafrange" name="schlafrange">
-    <output id="schlafdauerOutput"> </output>
+      <label for="sleepdurationRange" class="title is-2"> Sleep duration: </label>
+      <div class="slidecontainer">
+        <input type="range" min="4" max="12" value="8" step="0.5" class="slider" id="sleepdurationRange" name="sleepdurationRange">
+      </div>
+      <output id="sleepdurationOutput">
+        <h1 class="title is-2" id="sleepdurationOutputText"> </h1>
+      </output>
 
-    <input type="submit" value="submit">
+      <label for="sleepqualityRange" class="title is-2"> Sleep quality: </label>
+      <div class="slidecontainer">
+        <input type="range" min="0" max="10" value="0" step="1" class="slider" id="sleepqualityRange" name="sleepqualityRange">
+      </div>
+      <output id="sleepqualityOutput">
+        <h1 class="title is-2" id="sleepqualityOutputText"> </h1>
+      </output>
 
-  </form>
+      <input type="submit" value="submit">
+     </form>
 
+    <script>
 
-  <script>
-    const schlafRangeSlider = document.getElementById("schlafrange");
-    const schlafRangeOutput = document.getElementById("schlafdauerOutput");
-    schlafRangeOutput.innerHTML = schlafRangeSlider.value;
-    schlafRangeSlider.oninput = function() {
-      schlafRangeOutput.innerHTML = this.value;
-    }
-  </script>
+      const sleepdurationRange = document.getElementById("sleepdurationRange");
+      const sleepdurationOutputText = document.getElementById("sleepdurationOutputText");
+      sleepdurationOutputText.innerHTML = sleepdurationRange.value;
+      sleepdurationRange.oninput = function() {
+        sleepdurationOutputText.innerHTML = this.value;
+      }
 
-</div>
+      const sleepqualityRange = document.getElementById("sleepqualityRange");
+      const sleepqualityOutputText = document.getElementById("sleepqualityOutputText");
+      sleepqualityOutputText.innerHTML = sleepqualityRange.value;
+      sleepqualityRange.oninput = function() {
+        sleepqualityOutputText.innerHTML = this.value;
+      }
+    </script>
+   </div>
 </body>
+
 </html>

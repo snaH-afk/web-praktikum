@@ -20,9 +20,11 @@ public class MainController {
     }
 
     @PostMapping("/addEntry")
-    public String formController(@RequestPart("schlafrange") double schlafrange) {
+    public String formController(@RequestPart("sleepdurationRange") String sleepduration,
+                                 @RequestPart("sleepqualityRange") String sleepquality) {
 
-        System.out.println("Schlafrange: " + schlafrange);
+        System.out.println("Sleep duration: " + sleepduration);
+        System.out.println("Sleep quality: " + sleepquality);
 
         return "index";
     }
