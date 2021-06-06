@@ -63,6 +63,40 @@
         <h1 class="title is-2" id="sleepqualityOutputText"> </h1>
       </output>
 
+      <label for="sportdurationRange" class="title is-2"> Sport duration: </label>
+      <div class="slidecontainer">
+        <input type="range" min="0" max="10" value="0" step="1" class="slider" id="sportdurationRange" name="sportdurationRange">
+      </div>
+      <output id="sportdurationOutput">
+        <h1 class="title is-2" id="sportdurationOutputText"> </h1>
+      </output>
+
+      <label for="sportintensityRange" class="title is-2"> Sport intensity: </label>
+      <div class="slidecontainer">
+        <input type="range" min="0" max="10" value="0" step="1" class="slider" id="sportintensityRange" name="sportintensityRange">
+      </div>
+      <output id="sportintensityOutput">
+        <h1 class="title is-2" id="sportintensityOutputText"> </h1>
+      </output>
+
+      <label for="wellbeingRange" class="title is-2"> Sense of wellbeing: </label>
+      <div class="slidecontainer">
+        <input type="range" min="0" max="10" value="0" step="1" class="slider" id="wellbeingRange" name="wellbeingRange">
+      </div>
+      <output id="wellbeingOutput">
+        <h1 class="title is-2" id="wellbeingOutputText"> </h1>
+      </output>
+
+      <h1 class="title is-2">Bild</h1>
+      <div class="file is-info ml-2 mb-4">
+        <label class="file-label" for="image">
+          <input class="file-input" type="file" name="image" id="image">
+            <span class="file-cta">
+              <span class="file-label"> Bild hochladen  </span>
+            </span>
+        </label>
+      </div>
+
       <input type="submit" value="submit">
      </form>
 
@@ -81,6 +115,30 @@
       sleepqualityRange.oninput = function() {
         sleepqualityOutputText.innerHTML = this.value;
       }
+
+      const sportdurationRange = document.getElementById("sportdurationRange");
+      const sportdurationOutputText = document.getElementById("sportdurationOutputText");
+      sportdurationOutputText.innerHTML = sportdurationRange.value;
+      sportdurationRange.oninput = function() {
+        sportdurationOutputText.innerHTML = this.value;
+      }
+
+      const sportintensityRange = document.getElementById("sportintensityRange");
+      const sportintensityOutputText = document.getElementById("sportintensityOutputText");
+      sportintensityOutputText.innerHTML = sportintensityRange.value;
+      sportintensityRange.oninput = function() {
+        sportintensityOutputText.innerHTML = this.value;
+      }
+
+      const wellbeingRange = document.getElementById("wellbeingRange");
+      const wellbeingOutputText = document.getElementById("wellbeingOutputText");
+      wellbeingOutputText.innerHTML = wellbeingRange.value;
+      wellbeingRange.oninput = function() {
+        wellbeingOutputText.innerHTML = this.value;
+      }
+
+
+
     </script>
    </div>
 </body>
