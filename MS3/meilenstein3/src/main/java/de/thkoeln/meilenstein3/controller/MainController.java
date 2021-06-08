@@ -49,14 +49,7 @@ public class MainController {
         model.addAttribute("entry", entryRepository.findAll());
         model.addAttribute("title", title);
         redirectAttributes.addFlashAttribute("title", title);
-
-        System.out.println("Title: " + title);
-        System.out.println("Sleep duration: " + sleepduration);
-        System.out.println("Sleep quality: " + sleepquality);
-        System.out.println("Sport duration: " + sportduration);
-        System.out.println("Sport intensity: " + sportintensity);
-        System.out.println("Sense of wellbeing: " + wellbeing);
-        System.out.println("Image: " + image);
+        redirectAttributes.addFlashAttribute("successMessage", "Upload erfolgreich");
 
         return "redirect:/addEntry";
     }
