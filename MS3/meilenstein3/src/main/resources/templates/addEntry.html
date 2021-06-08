@@ -11,16 +11,16 @@
 <div id="appwidth">
   <div class=" columns is-mobile is-flex">
     <div class="column is-offset-2 is-3-mobile is-1-desktop is-2-tablet">
-      <img src="./resources/images/logo.svg" alt="logo" width="100%" />
+      <img src="./images/logo.svg" alt="logo" width="100%" />
     </div>
     <div class="column ">
       <h1 class="title is-1" th:if="${title}" th:text="${title}"></h1>
-      <h4 class="subtitle is-4">Hinzufügen eines neuen Eintrags</h4>
+      <h4 class="subtitle is-1">Hinzufügen eines neuen Eintrags</h4>
     </div>
   </div>
 
   <form action="/addEntry" method="post" enctype="multipart/form-data">
-    <h1 class="title is-4">Titel</h1>
+    <h1 class="title is-3">Titel</h1>
     <input class="input" type="text" placeholder="Text eingeben" id="title" name="title">
 
     <label for="sleepdurationRange" class="title is-2"> Sleep duration: </label>
@@ -28,7 +28,7 @@
       <input type="range" min="4" max="12" value="8" step="0.5" class="slider" id="sleepdurationRange" name="sleepdurationRange">
     </div>
     <output id="sleepdurationOutput">
-      <h1 class="title is-2" id="sleepdurationOutputText"> </h1>
+      <h1 class="title is-3" id="sleepdurationOutputText"> </h1>
     </output>
 
     <label for="sleepqualityRange" class="title is-2"> Sleep quality: </label>
@@ -36,7 +36,7 @@
       <input type="range" min="0" max="10" value="0" step="1" class="slider" id="sleepqualityRange" name="sleepqualityRange">
     </div>
     <output id="sleepqualityOutput">
-      <h1 class="title is-2" id="sleepqualityOutputText"> </h1>
+      <h1 class="title is-3" id="sleepqualityOutputText"> </h1>
     </output>
 
     <label for="sportdurationRange" class="title is-2"> Sport duration: </label>
@@ -44,7 +44,7 @@
       <input type="range" min="0" max="10" value="0" step="1" class="slider" id="sportdurationRange" name="sportdurationRange">
     </div>
     <output id="sportdurationOutput">
-      <h1 class="title is-2" id="sportdurationOutputText"> </h1>
+      <h1 class="title is-3" id="sportdurationOutputText"> </h1>
     </output>
 
     <label for="sportintensityRange" class="title is-2"> Sport intensity: </label>
@@ -52,7 +52,7 @@
       <input type="range" min="0" max="10" value="0" step="1" class="slider" id="sportintensityRange" name="sportintensityRange">
     </div>
     <output id="sportintensityOutput">
-      <h1 class="title is-2" id="sportintensityOutputText"> </h1>
+      <h1 class="title is-3" id="sportintensityOutputText"> </h1>
     </output>
 
     <label for="wellbeingRange" class="title is-2"> Sense of wellbeing: </label>
@@ -60,10 +60,10 @@
       <input type="range" min="0" max="10" value="0" step="1" class="slider" id="wellbeingRange" name="wellbeingRange">
     </div>
     <output id="wellbeingOutput">
-      <h1 class="title is-2" id="wellbeingOutputText"> </h1>
+      <h1 class="title is-3" id="wellbeingOutputText"> </h1>
     </output>
 
-    <h1 class="title is-2">Bild</h1>
+    <h1 class="title is-3">Bild</h1>
     <div class="file is-info ml-2 mb-4">
       <label class="file-label" for="image">
         <input class="file-input" type="file" name="image" id="image">
