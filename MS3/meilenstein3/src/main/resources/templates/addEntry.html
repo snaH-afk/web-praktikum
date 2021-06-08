@@ -1,136 +1,117 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-
   <title th:text="${title}"></title>
-
-  <link rel="stylesheet" href="/resources/css/index.css" />
-  <link rel="stylesheet" href="/resources/css/print.css" media="print" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css" />
   <link th:href="@{/css/index.css}" rel="stylesheet" />
-
-
-  <script type="module">
-    document.documentElement.classList.remove("no-js"); document.documentElement.classList.add("js");
-  </script>
 </head>
 
 <body>
-  <script src="/assets/js/xy-polyfill.js" nomodule></script>
-  <script src="/assets/js/script.js" type="module"></script>
+<div id="appwidth">
+  <div class=" columns is-mobile is-flex">
+    <div class="column is-offset-2 is-3-mobile is-1-desktop is-2-tablet">
+      <img src="./resources/images/logo.svg" alt="logo" width="100%" />
+    </div>
+    <div class="column ">
+      <h1 class="title is-1" th:if="${title}" th:text="${title}"></h1>
+      <h4 class="subtitle is-4">Hinzufügen eines neuen Eintrags</h4>
+    </div>
+  </div>
 
-  <div id="appwidth">
-   <div class=" columns is-mobile is-flex">
-     <div class="column is-offset-2 is-3-mobile is-1-desktop is-2-tablet">
-       <img src="./resources/images/logo.svg" alt="logo" width="100%" />
-     </div>
-     <div class="column ">
-       <h1 class="title is-1" th:if="${title}" th:text="${title}"></h1>
-       <h4 class="subtitle is-4">Hinzufügen eines neuen Eintrags</h4>
-     </div>
+  <form action="/addEntry" method="post" enctype="multipart/form-data">
+    <h1 class="title is-4">Titel</h1>
+    <input class="input" type="text" placeholder="Text eingeben" id="title" name="title">
+
+    <label for="sleepdurationRange" class="title is-2"> Sleep duration: </label>
+    <div class="slidecontainer">
+      <input type="range" min="4" max="12" value="8" step="0.5" class="slider" id="sleepdurationRange" name="sleepdurationRange">
+    </div>
+    <output id="sleepdurationOutput">
+      <h1 class="title is-2" id="sleepdurationOutputText"> </h1>
+    </output>
+
+    <label for="sleepqualityRange" class="title is-2"> Sleep quality: </label>
+    <div class="slidecontainer">
+      <input type="range" min="0" max="10" value="0" step="1" class="slider" id="sleepqualityRange" name="sleepqualityRange">
+    </div>
+    <output id="sleepqualityOutput">
+      <h1 class="title is-2" id="sleepqualityOutputText"> </h1>
+    </output>
+
+    <label for="sportdurationRange" class="title is-2"> Sport duration: </label>
+    <div class="slidecontainer">
+      <input type="range" min="0" max="10" value="0" step="1" class="slider" id="sportdurationRange" name="sportdurationRange">
+    </div>
+    <output id="sportdurationOutput">
+      <h1 class="title is-2" id="sportdurationOutputText"> </h1>
+    </output>
+
+    <label for="sportintensityRange" class="title is-2"> Sport intensity: </label>
+    <div class="slidecontainer">
+      <input type="range" min="0" max="10" value="0" step="1" class="slider" id="sportintensityRange" name="sportintensityRange">
+    </div>
+    <output id="sportintensityOutput">
+      <h1 class="title is-2" id="sportintensityOutputText"> </h1>
+    </output>
+
+    <label for="wellbeingRange" class="title is-2"> Sense of wellbeing: </label>
+    <div class="slidecontainer">
+      <input type="range" min="0" max="10" value="0" step="1" class="slider" id="wellbeingRange" name="wellbeingRange">
+    </div>
+    <output id="wellbeingOutput">
+      <h1 class="title is-2" id="wellbeingOutputText"> </h1>
+    </output>
+
+    <h1 class="title is-2">Bild</h1>
+    <div class="file is-info ml-2 mb-4">
+      <label class="file-label" for="image">
+        <input class="file-input" type="file" name="image" id="image">
+        <span class="file-cta">
+          <span class="file-label"> Bild hochladen  </span>
+        </span>
+      </label>
     </div>
 
-    <form action="/addEntry" method="post" enctype="multipart/form-data">
-      <h1 class="title is-4">Titel</h1>
-      <input class="input" type="text" placeholder="Text eingeben" id="title" name="title">
+    <input type="submit" value="submit">
+  </form>
+</div>
 
-      <label for="sleepdurationRange" class="title is-2"> Sleep duration: </label>
-      <div class="slidecontainer">
-        <input type="range" min="4" max="12" value="8" step="0.5" class="slider" id="sleepdurationRange" name="sleepdurationRange">
-      </div>
-      <output id="sleepdurationOutput">
-        <h1 class="title is-2" id="sleepdurationOutputText"> </h1>
-      </output>
+  <script>
+    const sleepdurationRange = document.getElementById("sleepdurationRange");
+    const sleepdurationOutputText = document.getElementById("sleepdurationOutputText");
+    sleepdurationOutputText.innerHTML = sleepdurationRange.value;
+    sleepdurationRange.oninput = function() {
+      sleepdurationOutputText.innerHTML = this.value;
+    }
 
-      <label for="sleepqualityRange" class="title is-2"> Sleep quality: </label>
-      <div class="slidecontainer">
-        <input type="range" min="0" max="10" value="0" step="1" class="slider" id="sleepqualityRange" name="sleepqualityRange">
-      </div>
-      <output id="sleepqualityOutput">
-        <h1 class="title is-2" id="sleepqualityOutputText"> </h1>
-      </output>
+    const sleepqualityRange = document.getElementById("sleepqualityRange");
+    const sleepqualityOutputText = document.getElementById("sleepqualityOutputText");
+    sleepqualityOutputText.innerHTML = sleepqualityRange.value;
+    sleepqualityRange.oninput = function() {
+      sleepqualityOutputText.innerHTML = this.value;
+    }
 
-      <label for="sportdurationRange" class="title is-2"> Sport duration: </label>
-      <div class="slidecontainer">
-        <input type="range" min="0" max="10" value="0" step="1" class="slider" id="sportdurationRange" name="sportdurationRange">
-      </div>
-      <output id="sportdurationOutput">
-        <h1 class="title is-2" id="sportdurationOutputText"> </h1>
-      </output>
+    const sportdurationRange = document.getElementById("sportdurationRange");
+    const sportdurationOutputText = document.getElementById("sportdurationOutputText");
+    sportdurationOutputText.innerHTML = sportdurationRange.value;
+    sportdurationRange.oninput = function() {
+      sportdurationOutputText.innerHTML = this.value;
+    }
 
-      <label for="sportintensityRange" class="title is-2"> Sport intensity: </label>
-      <div class="slidecontainer">
-        <input type="range" min="0" max="10" value="0" step="1" class="slider" id="sportintensityRange" name="sportintensityRange">
-      </div>
-      <output id="sportintensityOutput">
-        <h1 class="title is-2" id="sportintensityOutputText"> </h1>
-      </output>
+    const sportintensityRange = document.getElementById("sportintensityRange");
+    const sportintensityOutputText = document.getElementById("sportintensityOutputText");
+    sportintensityOutputText.innerHTML = sportintensityRange.value;
+    sportintensityRange.oninput = function() {
+      sportintensityOutputText.innerHTML = this.value;
+    }
 
-      <label for="wellbeingRange" class="title is-2"> Sense of wellbeing: </label>
-      <div class="slidecontainer">
-        <input type="range" min="0" max="10" value="0" step="1" class="slider" id="wellbeingRange" name="wellbeingRange">
-      </div>
-      <output id="wellbeingOutput">
-        <h1 class="title is-2" id="wellbeingOutputText"> </h1>
-      </output>
-
-      <h1 class="title is-2">Bild</h1>
-      <div class="file is-info ml-2 mb-4">
-        <label class="file-label" for="image">
-          <input class="file-input" type="file" name="image" id="image">
-            <span class="file-cta">
-              <span class="file-label"> Bild hochladen  </span>
-            </span>
-        </label>
-      </div>
-
-      <input type="submit" value="submit">
-     </form>
-
-    <script>
-
-      const sleepdurationRange = document.getElementById("sleepdurationRange");
-      const sleepdurationOutputText = document.getElementById("sleepdurationOutputText");
-      sleepdurationOutputText.innerHTML = sleepdurationRange.value;
-      sleepdurationRange.oninput = function() {
-        sleepdurationOutputText.innerHTML = this.value;
-      }
-
-      const sleepqualityRange = document.getElementById("sleepqualityRange");
-      const sleepqualityOutputText = document.getElementById("sleepqualityOutputText");
-      sleepqualityOutputText.innerHTML = sleepqualityRange.value;
-      sleepqualityRange.oninput = function() {
-        sleepqualityOutputText.innerHTML = this.value;
-      }
-
-      const sportdurationRange = document.getElementById("sportdurationRange");
-      const sportdurationOutputText = document.getElementById("sportdurationOutputText");
-      sportdurationOutputText.innerHTML = sportdurationRange.value;
-      sportdurationRange.oninput = function() {
-        sportdurationOutputText.innerHTML = this.value;
-      }
-
-      const sportintensityRange = document.getElementById("sportintensityRange");
-      const sportintensityOutputText = document.getElementById("sportintensityOutputText");
-      sportintensityOutputText.innerHTML = sportintensityRange.value;
-      sportintensityRange.oninput = function() {
-        sportintensityOutputText.innerHTML = this.value;
-      }
-
-      const wellbeingRange = document.getElementById("wellbeingRange");
-      const wellbeingOutputText = document.getElementById("wellbeingOutputText");
-      wellbeingOutputText.innerHTML = wellbeingRange.value;
-      wellbeingRange.oninput = function() {
-        wellbeingOutputText.innerHTML = this.value;
-      }
-
-
-
+    const wellbeingRange = document.getElementById("wellbeingRange");
+    const wellbeingOutputText = document.getElementById("wellbeingOutputText");
+    wellbeingOutputText.innerHTML = wellbeingRange.value;
+    wellbeingRange.oninput = function() {
+      wellbeingOutputText.innerHTML = this.value;
+    }
     </script>
-   </div>
 </body>
-
 </html>
